@@ -1,0 +1,63 @@
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+}
+.login-header {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+.login-header img {
+    width: 100px;
+}
+.login-header h1 {
+    color: #333;
+    font-size: 1.5em;
+}
+.login-input {
+    border: 2px solid #333;
+    border-radius: 8px;
+    color: #333;
+    font-size: 1em;
+    margin-bottom: 15px;
+    /* Ocupa toda a tela se for menor de 300px */
+    max-width: 300px;
+    width: 100%;
+    outline: none;
+    padding: 15px;
+}
+
+.login-button {
+    background-color: #ee665c;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1em;
+    max-width: 300px;
+    padding: 15px;
+    width: 100%;
+}
+
+/* Usando a pseudo-class disabled para quando o botão estiver desabilitado*/
+.login-button:disabled {
+    background-color: #eee;
+    color: #aaa;
+    cursor: auto;
+}
+
+/* Referencia ao criador do jogo */
+.refer {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    font-size: 0.7em;
+}
+
+.refer:hover a {
+    color: #ee665c;
+}
