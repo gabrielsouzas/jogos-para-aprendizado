@@ -29,6 +29,8 @@
     background-position: center;
     border: 2px solid #39813a;
     border-radius: 5px;
+    /* Transição mais suave para quando ficar opaca */
+    transition: all 400ms ease;
 }
 
 .front {
@@ -46,4 +48,11 @@
 .reveal-card {
     /* Gira o card no eixo Y 180 graus */
     transform: rotateY(180deg);
+}
+
+.disabled-card {
+    /* Deixa a imagem em preto e branco */
+    filter: saturate(0);
+    /* Deixa a imagem opaca */
+    opacity: 0.5;
 }

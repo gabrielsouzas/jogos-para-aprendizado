@@ -28,16 +28,58 @@ const createElement = (tag, className) => {
 let firstCard = '';
 let secondCard = '';
 
+// Função que verifica se o jogo acabou
+const checkEndGame = () => {
+    // Pega todos os elementos com a classe disabled-card e salva em um array
+    const disabledCards = document.querySelectorAll('.disabled-card');
+
+    if (disabledCards.length === 20) {
+        alert('Parabéns, você conseguiu')
+    }
+}
+
 // Função que verifica se as cartas clicadas são iguais
 const checkCards = () => {
-    
+    // Pega os atributos das cartas clicadas
+    const firstCharacter = firstCard.getAttribute('data-character');
+    const secondCharacter = secondCard.getAttribute('data-character');
+
+    // Testa se os atributos possuem o mesmo valor (ACERTAR)
+    if (firstCharacter === secondCharacter) {
+        
+        /* Adiciona a classe disabled-card para as cartas que foram iguais (firstChild pega o primeiro filho que encontra deo elemento, no caso a face front) */
+        firstCard.firstChild.classList.add('disabled-card');
+        secondCard.firstChild.classList.add('disabled-card');
+
+        // Zera as cartas para escolher novas
+        firstCard = '';
+        secondCard = '';
+
+        // Verifica se o jogo acabou
+        checkEndGame();
+
+    // Se for diferente (ERRAR)
+    } else {
+
+        // Coloca dentro de um timeOut para que fique visivel o segundo clique, ou seja, da um tempo para que vejamos o segundo clique acontecer
+        setTimeout(() => {
+        // Remove a classe que revela a carta das duas cartas clicadas
+        firstCard.classList.remove('reveal-card');
+        secondCard.classList.remove('reveal-card');
+
+        // Zera as cartas para escolher novas
+        firstCard = '';
+        secondCard = '';
+        }, 500);
+
+    }
 }
 
 // Cria a função para revelar a carta ao clicar, passando o parametro target que vem da desconstrução do event do clique do mouse
 const  revealCard = ( { target }) => {
     
     // Verifica se a carta já possui a classe reveal-card (carta virada)
-    if (target.parentNode.classList.include('reveal-card')) {
+    if (target.parentNode.className.includes('reveal-card')) {
         return;
     }
 
