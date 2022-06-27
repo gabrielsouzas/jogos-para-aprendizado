@@ -1,0 +1,49 @@
+.grid {
+    display: grid;
+    /* Para definir o tamanho/quantidade das colunas do GRID*/
+    /* Para dividir o GRID em colunas de acordo com todo o tamanho disponivel usa-se o 1fr (1 fração), e foi usado também a função repeat(), que retorna a multiplicação do primeiro parametro pelo segundo*/
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.card {
+    /* Define a proporção do height */
+    aspect-ratio: 3/4;
+    width: 100%;
+    border-radius: 5px;
+    position: relative;
+    /* Tempo de transição do efeito de rotação do card */
+    transition: all 400ms ease;
+    /* Para preservar um comportamento em 3D */
+    transform-style: preserve-3d;
+}
+
+.face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid #39813a;
+    border-radius: 5px;
+}
+
+.front {
+    /* Deixa o face invertido para que quando o back for girado o face volte a posição normal */
+    transform: rotateY(180deg);
+    
+}
+
+.back {
+    background-image: url('../images/back.png');
+    /* Oculta a parte de tras da face, para que quando o card for girado a div front apareça */
+    backface-visibility: hidden;
+}
+
+.reveal-card {
+    /* Gira o card no eixo Y 180 graus */
+    transform: rotateY(180deg);
+}
