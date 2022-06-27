@@ -9,7 +9,6 @@ Este jogo foi desenvolvido para aprender mais das tecnologias citadas acima e aj
 * Segundo video do desenvolvimento do jogo: <https://www.youtube.com/watch?v=tcbMmm77WOU>
 
 
-### Prints
+### 📷 Prints
 
-<img src="https://github.com/gabrielsouzas/jogos-para-aprendizado/blob/main/jogo-memoria-javascript/images/print01.png" width="350" height="350"/> 
-<img src="https://github.com/gabrielsouzas/jogos-para-aprendizado/blob/main/jogo-memoria-javascript/images/print01.png" width="350" height="350"/>
+<img src="https://github.com/gabrielsouzas/jogos-para-aprendizado/blob/main/jogo-memoria-javascript/images/print01.png" width="512" height="398"/> <img src="https://github.com/gabrielsouzas/jogos-para-aprendizado/blob/main/jogo-memoria-javascript/images/print02.png" width="512" height="398"/>
