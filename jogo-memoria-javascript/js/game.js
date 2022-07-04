@@ -1,4 +1,6 @@
 const grid = document.querySelector('.grid');
+const spanPlayer = document.querySelector('.player');
+const timer = document.querySelector('.timer');
 
 // Array com o nome das imagens das cartas
 const characters = [
@@ -34,7 +36,10 @@ const checkEndGame = () => {
     const disabledCards = document.querySelectorAll('.disabled-card');
 
     if (disabledCards.length === 20) {
-        alert('Parabéns, você conseguiu')
+        // Para o loop do tempo
+        clearInterval(this.loop);
+
+        alert(`Parabéns, ${spanPlayer.innerHTML}! Seu tempo foi: ${timer.innerHTML}`)
     }
 }
 
@@ -153,4 +158,27 @@ const loadGame = () => {
 
 }
 
-loadGame();
+// Função para iniciar o contador do tempo
+const startTimer = () => {
+
+    // Cria um loop e seta na chave loop que está dentro do contexto que o this identifica
+    this.loop = setInterval(() => {
+
+        // Colocar o + na frente de uma string faz ele tentar converter para numero
+        const currentTime = +timer.innerHTML;
+        timer.innerHTML = currentTime + 1;
+
+    }, 1000)
+}
+
+// Aguarda tudo ser carregado e executa o método anonimo
+window.onload = () => {
+    
+    // recupera o valor salvo com a chave player e passa para o elemento spanPlayer na tela
+    spanPlayer.innerHTML = localStorage.getItem('player');
+
+    // Inicia o tempo
+    startTimer();
+
+    loadGame();
+}

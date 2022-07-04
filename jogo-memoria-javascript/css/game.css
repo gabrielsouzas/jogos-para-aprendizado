@@ -1,3 +1,32 @@
+main {
+    display: flex;
+    flex-direction: column;
+    /* Ocupa 100% da tela*/
+    width: 100%;
+    /* Ocupa 100% da altura da view port */
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px 50px;
+    background-image: url(../images/bg.jpg);
+    /* Ajusta a imagem na tela */
+    background-size: cover;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    font-size: 1.2em;
+    /* Deixa um espaço entre os itens */
+    justify-content: space-between;
+    width: 100%;
+    max-width: 800px;  
+    padding: 30px;
+    margin: 0 0 30px;
+    border-radius: 5px;
+}
+
 .grid {
     display: grid;
     /* Para definir o tamanho/quantidade das colunas do GRID*/
@@ -19,6 +48,8 @@
     transition: all 400ms ease;
     /* Para preservar um comportamento em 3D */
     transform-style: preserve-3d;
+    /* Cor de fundo para a transparencia ficar em cima de uma cor e não do fundo da imagem principal */
+    background-color: #ccc;
 }
 
 .face {
